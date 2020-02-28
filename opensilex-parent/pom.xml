@@ -29,7 +29,7 @@
         <maven.minimal.version>3.5</maven.minimal.version>
         <!-- dependencies version -->
         <jersey.version>2.29.1</jersey.version>
-        <tomcat.version>9.0.29</tomcat.version>
+        <tomcat.version>9.0.31</tomcat.version>
         <hibernate.validator.version>6.1.0.Final</hibernate.validator.version>
         <jackson.version>2.10.1</jackson.version>
         <javax.servlet.api.version>4.0.1</javax.servlet.api.version>
