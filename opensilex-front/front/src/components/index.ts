@@ -187,6 +187,9 @@ components["opensilex-AddChildButton"] = AddChildButton;
 import HelpButton from './common/buttons/HelpButton.vue'
 components["opensilex-HelpButton"] = HelpButton;
 
+import XSDDecimalInput from './common/ontology/XSDDecimalInput.vue'
+components["opensilex-XSDDecimalInput"] = XSDDecimalInput;
+
 // Experiments
 import ExperimentForm from './experiments/form/ExperimentForm.vue';
 components["opensilex-ExperimentForm"] = ExperimentForm;
@@ -252,7 +255,8 @@ import ScientificObjectPropertyConfiguration from './scientificObjects/Scientifi
 components["opensilex-ScientificObjectPropertyConfiguration"] = ScientificObjectPropertyConfiguration;
 import ScientificObjectCSVImporter from './scientificObjects/ScientificObjectCSVImporter.vue';
 components["opensilex-ScientificObjectCSVImporter"] = ScientificObjectCSVImporter;
-
+import ScientificObjectForm from './scientificObjects/ScientificObjectForm.vue';
+components["opensilex-ScientificObjectForm"] = ScientificObjectForm;
 
 // Variables
 import VariableList from './variables/VariableList.vue';
