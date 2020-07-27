@@ -46,7 +46,6 @@ public class Oeso {
     public static final Property hasLongName = Ontology.property(NS, "hasLongName");
     public static final Property hasSynonym = Ontology.property(NS, "hasSynonym");
 
-
     // ---- VARIABLES ----
     public static final Resource Variable = Ontology.resource(NS, "Variable");
     public static final Resource Entity = Ontology.resource(NS, "Entity");
@@ -56,8 +55,8 @@ public class Oeso {
 
     public static final Property hasEntity = Ontology.property(NS, "hasEntity");
     public static final Property hasQuality = Ontology.property(NS, "hasQuality");
-    public static final Property hasTraitUri = Ontology.property(NS,"hasTraitUri");
-    public static final Property hasTraitName = Ontology.property(NS,"hasTraitName");
+    public static final Property hasTraitUri = Ontology.property(NS, "hasTraitUri");
+    public static final Property hasTraitName = Ontology.property(NS, "hasTraitName");
 
     public static final Property hasMethod = Ontology.property(NS, "hasMethod");
     public static final Property hasUnit = Ontology.property(NS, "hasUnit");
@@ -134,6 +133,6 @@ public class Oeso {
     // ---- SCIENTIFIC OBJECTS ----
     public static final Resource ScientificObject = Ontology.resource(NS, "ScientificObject");
     public static final Property isPartOf = Ontology.property(NS, "isPartOf");
-
+    public static final Resource ScientificObjectClass = Ontology.resource(NS, "ScientificObjectClass");
+    public static final Property isScientificObjectManagedClass = Ontology.property(NS, "isScientificObjectManagedClass");
 }
-
