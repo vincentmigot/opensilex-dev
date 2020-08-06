@@ -216,13 +216,18 @@ export default class GermplasmList extends Vue {
     "institute": null
   };
 
+  private langUnwatcher;
   mounted() {
-    this.$store.watch(
+    this.langUnwatcher = this.$store.watch(
       () => this.$store.getters.language,
       lang => {
         this.updateLang();
       }
     );
+  }
+
+  beforeDestroy() {
+    this.langUnwatcher();
   }
 
   private filter: any = "";

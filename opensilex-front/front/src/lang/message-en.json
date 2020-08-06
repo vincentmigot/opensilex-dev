@@ -173,7 +173,10 @@
                 "factors": "Factors",
                 "germplasm": "Germplasm"
             },
-            "infrastructures": "Infrastructures"
+            "infrastructures": "Infrastructures",
+            "configuration": "Settings",
+            "scientificObjectTypes": "Scientific object types",
+            "scientificObjectProperties":  "Scientific object properties"
         },
         "login": {
             "input": {
@@ -766,7 +769,8 @@
                 "scientificObjects": "ik-target",
                 "experimentalDesign": {
                     "label": "ik-map"
-                }
+                },
+                "configuration": "ik-settings"
             }
         }
     },

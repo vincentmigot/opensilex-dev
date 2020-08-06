@@ -148,13 +148,18 @@ export default class FactorLevelTable extends Vue {
     this.service = this.$opensilex.getService("opensilex.FactorsService");
   }
 
+  private langUnwatcher;
   mounted() {
-    this.$store.watch(
+    this.langUnwatcher = this.$store.watch(
       () => this.$store.getters.language,
       lang => {
         this.changeTableLang(lang);
       }
     );
+  }
+
+  beforeDestroy() {
+    this.langUnwatcher();
   }
 
   uploaded(data) {

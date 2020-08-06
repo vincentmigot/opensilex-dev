@@ -21,39 +21,19 @@ import org.opensilex.sparql.utils.ClassURIGenerator;
 
 /**
  *
-* @author Alice Boizet
+ * @author Alice Boizet
  */
-
 @SPARQLResource(
         ontology = Oeso.class,
         resource = "Germplasm",
         graph = "germplasm",
         prefix = "germplasm"
 )
-public class GermplasmModel extends SPARQLNamedResourceModel<GermplasmModel> implements ClassURIGenerator<GermplasmModel>{
-    
-    @SPARQLIgnore
-    protected String name;
-    
-    @SPARQLProperty(
-        ontology = RDFS.class,
-        property = "label",
-        required = true
-    )
-    SPARQLLabel label;
-    public static final String LABEL_VAR = "label";
-    
-    public SPARQLLabel getLabel() {
-        return label;
-    }
+public class GermplasmModel extends SPARQLNamedResourceModel<GermplasmModel> implements ClassURIGenerator<GermplasmModel> {
 
-    public void setLabel(SPARQLLabel label) {
-        this.label = label;
-    }
-    
-     @SPARQLProperty(
-        ontology = Oeso.class,
-        property = "hasId"
+    @SPARQLProperty(
+            ontology = Oeso.class,
+            property = "hasId"
     )
     String code;
     public static final String CODE_VAR = "code";
@@ -65,57 +45,57 @@ public class GermplasmModel extends SPARQLNamedResourceModel<GermplasmModel> imp
     public void setCode(String code) {
         this.code = code;
     }
-    
+
     @SPARQLProperty(
-        ontology = Oeso.class,
-        property = "fromSpecies"
+            ontology = Oeso.class,
+            property = "fromSpecies"
     )
     GermplasmModel species;
     public static final String SPECIES_URI_SPARQL_VAR = "species";
-    
+
     @SPARQLProperty(
-        ontology = Oeso.class,
-        property = "fromVariety"
+            ontology = Oeso.class,
+            property = "fromVariety"
     )
     GermplasmModel variety;
     public static final String VARIETY_URI_SPARQL_VAR = "variety";
-    
+
     @SPARQLProperty(
-        ontology = Oeso.class,
-        property = "fromAccession"
+            ontology = Oeso.class,
+            property = "fromAccession"
     )
     GermplasmModel accession;
-    public static final String ACCESSION_URI_SPARQL_VAR = "accession";     
-    
+    public static final String ACCESSION_URI_SPARQL_VAR = "accession";
+
     @SPARQLProperty(
-        ontology = RDFS.class,
-        property = "comment"
+            ontology = RDFS.class,
+            property = "comment"
     )
     String comment;
 
     @SPARQLProperty(
-        ontology = Oeso.class,
-        property = "fromInstitute"
+            ontology = Oeso.class,
+            property = "fromInstitute"
     )
     String institute;
-    public static final String INSTITUTE_SPARQL_VAR = "institute"; 
-    
+    public static final String INSTITUTE_SPARQL_VAR = "institute";
+
     @SPARQLProperty(
-        ontology = Oeso.class,
-        property = "hasProductionYear"
+            ontology = Oeso.class,
+            property = "hasProductionYear"
     )
     Integer productionYear;
-    public static final String PRODUCTION_YEAR_SPARQL_VAR = "productionYear"; 
-    
+    public static final String PRODUCTION_YEAR_SPARQL_VAR = "productionYear";
+
     Map<String, String> attributes;
-    
+
     @SPARQLProperty(
-        ontology = SKOS.class,
-        property = "altLabel"
+            ontology = SKOS.class,
+            property = "altLabel"
     )
     List<String> synonyms;
-    public static final String  SYNONYM_VAR= "synonym"; 
-    
+    public static final String SYNONYM_VAR = "synonym";
+
     public GermplasmModel getSpecies() {
         return species;
     }
@@ -179,21 +159,28 @@ public class GermplasmModel extends SPARQLNamedResourceModel<GermplasmModel> imp
     public void setSynonyms(List<String> synonyms) {
         this.synonyms = synonyms;
     }
-    
+
     @Override
     public String[] getUriSegments(GermplasmModel instance) {
-        String germplasmType = new String();
+        String germplasmType = "";
         if (instance.getType().getFragment() != null) {
             germplasmType = instance.getType().getFragment();
         } else {
-            if (instance.getType().getSchemeSpecificPart()!= null) {
+            if (instance.getType().getSchemeSpecificPart() != null) {
                 germplasmType = instance.getType().getSchemeSpecificPart();
-            }   
-        }               
+            }
+        }
 
-        return new String[]{                
-                germplasmType + "_" + instance.getLabel()
-        };
+        if (germplasmType.isEmpty()) {
+            return new String[]{
+                instance.getName()
+            };
+        } else {
+
+            return new String[]{
+                germplasmType, instance.getName()
+            };
+        }
     }
-    
+
 }
