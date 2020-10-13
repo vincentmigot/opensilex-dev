@@ -61,7 +61,7 @@
         <httpcore.version>4.4.12</httpcore.version>
         <javaee.web.api.version>8.0.1</javaee.web.api.version>
         <!-- test only dependencies version -->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mockito.version>3.2.0</mockito.version>
         <!-- maven plugins versions -->
         <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
