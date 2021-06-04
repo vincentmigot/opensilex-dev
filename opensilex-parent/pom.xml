@@ -57,7 +57,7 @@
         <jaxb.impl.version>2.3.2</jaxb.impl.version>
         <javax.activation.api.version>1.2.0</javax.activation.api.version>
         <reflections.version>0.9.11</reflections.version>
-        <httpclient.version>4.5.10</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <httpcore.version>4.4.12</httpcore.version>
         <javaee.web.api.version>8.0.1</javaee.web.api.version>
         <!-- test only dependencies version -->
